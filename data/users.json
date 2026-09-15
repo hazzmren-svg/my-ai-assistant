@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1787678803486",
+    "name": "Mrenmoy Hajong",
+    "email": "hajongmrenmoy200@gmail.com",
+    "password": "$2b$10$SteP1lxmEj4LZ6mb83tHheYBcPKUT5Ll25MVe80c0n3BsJgVvHAW2",
+    "createdAt": "2026-08-25T17:26:43.486Z"
+  },
+  {
+    "id": "1787763275178",
+    "name": "Chinmoye",
+    "email": "mybusi157@gmail.com",
+    "password": "$2b$10$dcp8zIIvj0jLNT97dqvCnOuhsYckT3OKkkG0JvigMF.gTt3N/ANYi",
+    "createdAt": "2026-08-26T16:54:35.178Z"
+  }
+]

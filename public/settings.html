@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Settings - My AI</title>
+
+    <link rel="stylesheet" href="settings.css">
+
+</head>
+
+<body>
+
+<div class="settings-page">
+
+    <!-- Header -->
+    <header class="settings-header">
+
+        <button id="backBtn" class="back-btn">
+            ← Back to AI
+        </button>
+
+        <h1>⚙️ Settings</h1>
+
+    </header>
+
+
+    <main class="settings-container">
+
+
+        <!-- Account -->
+        <section class="settings-card">
+
+            <h2>👤 Account</h2>
+
+            <div class="account-box">
+
+                <div class="account-avatar">
+                    👤
+                </div>
+
+                <div>
+
+                    <h3 id="accountName">
+                        User
+                    </h3>
+
+                    <p id="accountEmail">
+                        user@email.com
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Appearance -->
+        <section class="settings-card">
+
+            <h2>🎨 Appearance</h2>
+
+            <div class="setting-row">
+
+                <div>
+
+                    <strong>Light Mode</strong>
+
+                    <p>
+                        Change the appearance of My AI.
+                    </p>
+
+                </div>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="themeToggle">
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+        </section>
+
+
+        <!-- Voice -->
+        <section class="settings-card">
+
+            <h2>🔊 AI Voice</h2>
+
+
+            <div class="setting-row">
+
+                <div>
+
+                    <strong>Voice Language</strong>
+
+                    <p>
+                        Select the language used by AI voice.
+                    </p>
+
+                </div>
+
+                <select id="voiceLanguage">
+
+                    <option value="en-US">
+                        English
+                    </option>
+
+                    <option value="bn-BD">
+                        বাংলা
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="setting-row">
+
+                <div>
+
+                    <strong>Voice Speed</strong>
+
+                    <p>
+                        Control AI speaking speed.
+                    </p>
+
+                </div>
+
+                <select id="voiceSpeed">
+
+                    <option value="0.7">
+                        Slow
+                    </option>
+
+                    <option value="1">
+                        Normal
+                    </option>
+
+                    <option value="1.2">
+                        Fast
+                    </option>
+
+                    <option value="1.5">
+                        Very Fast
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- Chat -->
+        <section class="settings-card">
+
+            <h2>💬 Chat</h2>
+
+            <div class="setting-row">
+
+                <div>
+
+                    <strong>Clear Chat History</strong>
+
+                    <p>
+                        Delete your saved AI conversations.
+                    </p>
+
+                </div>
+
+                <button
+                    id="clearHistoryBtn"
+                    class="danger-btn">
+
+                    Clear History
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Save -->
+        <section class="settings-card save-card">
+
+            <button
+                id="saveBtn"
+                class="save-btn">
+
+                💾 Save Settings
+
+            </button>
+
+            <p id="saveMessage"></p>
+
+        </section>
+
+
+        <!-- Logout -->
+        <section class="settings-card">
+
+            <button
+                id="logoutBtn"
+                class="logout-btn">
+
+                🚪 Logout
+
+            </button>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="js/settings.js"></script>
+
+</body>
+
+</html>

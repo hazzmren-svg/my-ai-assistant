@@ -1,0 +1,556 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+    font-family: "Inter", Arial, sans-serif;
+
+    background: #202123;
+
+    color: white;
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.settings-page {
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.settings-header {
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 0 30px;
+
+    background: #343541;
+
+    border-bottom: 1px solid #444654;
+
+}
+
+
+.settings-header h1 {
+
+    font-size: 22px;
+
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn {
+
+    border: none;
+
+    background: #40414f;
+
+    color: white;
+
+    padding: 10px 16px;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: .2s;
+
+}
+
+
+.back-btn:hover {
+
+    background: #10a37f;
+
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.settings-container {
+
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: 30px auto;
+
+    padding: 0 20px;
+
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.settings-card {
+
+    background: #2b2c32;
+
+    border: 1px solid #444654;
+
+    border-radius: 14px;
+
+    padding: 22px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.settings-card h2 {
+
+    font-size: 18px;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================
+   ACCOUNT
+========================= */
+
+.account-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.account-avatar {
+
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 50%;
+
+    background: #10a37f;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 25px;
+
+}
+
+
+.account-box h3 {
+
+    font-size: 16px;
+
+    margin-bottom: 4px;
+
+}
+
+
+.account-box p {
+
+    color: #9ca3af;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================
+   SETTING ROW
+========================= */
+
+.setting-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 16px 0;
+
+    border-top: 1px solid #444654;
+
+}
+
+
+.setting-row:first-of-type {
+
+    border-top: none;
+
+}
+
+
+.setting-row strong {
+
+    font-size: 15px;
+
+}
+
+
+.setting-row p {
+
+    margin-top: 5px;
+
+    color: #9ca3af;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================
+   SELECT
+========================= */
+
+select {
+
+    background: #40414f;
+
+    color: white;
+
+    border: 1px solid #555;
+
+    border-radius: 8px;
+
+    padding: 10px 14px;
+
+    outline: none;
+
+    cursor: pointer;
+
+}
+
+
+select:focus {
+
+    border-color: #10a37f;
+
+}
+
+
+/* =========================
+   SWITCH
+========================= */
+
+.switch {
+
+    position: relative;
+
+    width: 50px;
+
+    height: 26px;
+
+    flex-shrink: 0;
+
+}
+
+
+.switch input {
+
+    display: none;
+
+}
+
+
+.slider {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: #555;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+.slider::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 20px;
+
+    height: 20px;
+
+    left: 3px;
+
+    top: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    transition: .3s;
+
+}
+
+
+.switch input:checked + .slider {
+
+    background: #10a37f;
+
+}
+
+
+.switch input:checked + .slider::before {
+
+    transform: translateX(24px);
+
+}
+
+
+/* =========================
+   SAVE
+========================= */
+
+.save-card {
+
+    text-align: center;
+
+}
+
+
+.save-btn {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #10a37f;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.save-btn:hover {
+
+    background: #0d8d6e;
+
+}
+
+
+#saveMessage {
+
+    margin-top: 10px;
+
+    color: #10a37f;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================
+   CLEAR
+========================= */
+
+.danger-btn {
+
+    border: none;
+
+    background: #7f1d1d;
+
+    color: white;
+
+    padding: 10px 15px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+
+.danger-btn:hover {
+
+    background: #dc2626;
+
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+.logout-btn {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #7f1d1d;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+}
+
+
+.logout-btn:hover {
+
+    background: #dc2626;
+
+}
+
+
+/* =========================
+   LIGHT MODE
+========================= */
+
+body.light-mode {
+
+    background: #f5f5f5;
+
+    color: #222;
+
+}
+
+
+body.light-mode .settings-header {
+
+    background: white;
+
+    border-color: #ddd;
+
+}
+
+
+body.light-mode .settings-card {
+
+    background: white;
+
+    border-color: #ddd;
+
+}
+
+
+body.light-mode .back-btn {
+
+    background: #eee;
+
+    color: #222;
+
+}
+
+
+body.light-mode .setting-row {
+
+    border-color: #ddd;
+
+}
+
+
+body.light-mode select {
+
+    background: #eee;
+
+    color: #222;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .settings-header {
+
+        padding: 0 15px;
+
+    }
+
+    .settings-header h1 {
+
+        font-size: 18px;
+
+    }
+
+    .setting-row {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+    select,
+    .danger-btn {
+
+        width: 100%;
+
+    }
+
+}
