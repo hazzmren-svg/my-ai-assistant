@@ -1,4 +1,5 @@
 const express = require("express");
+const jwt = require("jsonwebtoken");
 
 const {
     registerUser,
@@ -140,6 +141,32 @@ router.post("/login", async (req, res) => {
             );
 
 
+        // Create JWT token
+        const token = jwt.sign(
+            {
+                id: user.id,
+                email: user.email
+            },
+            process.env.JWT_SECRET,
+            {
+                expiresIn: "7d"
+            }
+        );
+
+
+        // Secure HttpOnly cookie
+        res.cookie(
+            "token",
+            token,
+            {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === "production",
+                sameSite: "lax",
+                maxAge: 7 * 24 * 60 * 60 * 1000
+            }
+        );
+
+
         res.json({
 
             success: true,
@@ -172,6 +199,26 @@ router.post("/login", async (req, res) => {
         });
 
     }
+
+});
+
+
+// =========================
+// LOGOUT
+// =========================
+
+router.post("/logout", (req, res) => {
+
+    res.clearCookie("token", {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax"
+    });
+
+    res.json({
+        success: true,
+        message: "Logged out successfully."
+    });
 
 });
 

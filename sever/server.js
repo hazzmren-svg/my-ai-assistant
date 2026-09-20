@@ -3,6 +3,7 @@ console.log("🔥 AI Server Starting...");
 require("dotenv").config();
 
 const express = require("express");
+const cookieParser = require("cookie-parser");
 const path = require("path");
 const fs = require("fs");
 const mammoth = require("mammoth");
@@ -183,8 +184,10 @@ const {
 } = require("./services/documentService");
 
 const chatRoute = require("./routes/chat");
+const { requireAuth } = require("./middleware/auth");
 const authRoute = require("./routes/auth");
 const app = express();
+app.use(cookieParser());
 // ==========================
 // Serve Generated Images
 // ==========================
@@ -214,7 +217,7 @@ app.use(express.urlencoded({
 // Chat Route
 // ==========================
 
-app.use("/chat", chatRoute);
+app.use("/chat", requireAuth, chatRoute);
 
 // ==========================
 // Authentication Route
@@ -358,6 +361,7 @@ const upload = multer({
 
 app.post(
     "/upload",
+    requireAuth,
     upload.single("file"),
     async (req, res) => {
 
