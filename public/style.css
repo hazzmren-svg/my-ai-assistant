@@ -1696,3 +1696,206 @@ body.light-mode .project-item {
 body.light-mode .project-item:hover {
     background: #eeeeee;
 }
+/* ================================
+   MOBILE RESPONSIVE DESIGN
+   ================================ */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 240px;
+        max-width: 80vw;
+    }
+
+    /* Main content */
+    .main {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Header */
+    .topbar {
+        padding: 10px 12px;
+    }
+
+    /* Chat area */
+    #chat {
+        padding: 12px 10px;
+    }
+
+    /* Messages */
+    .message {
+        max-width: 92%;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* Input area */
+    .input-area {
+        padding: 8px;
+    }
+
+    #message {
+        font-size: 15px;
+        min-width: 0;
+    }
+
+    /* Buttons */
+    button {
+        max-width: 100%;
+    }
+
+    /* Generated images */
+    .generated-image,
+    .message img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Projects */
+    .projects-panel {
+        width: 100%;
+        max-width: 100%;
+    }
+
+}
+
+
+/* Small phones */
+@media (max-width: 480px) {
+
+    .message {
+        max-width: 96%;
+        font-size: 14px;
+    }
+
+    #chat {
+        padding: 8px 6px;
+    }
+
+    .input-area {
+        padding: 6px;
+    }
+
+    #message {
+        font-size: 14px;
+    }
+
+    .sidebar {
+        width: 220px;
+    }
+
+}
+/* ================================
+   MOBILE SIDEBAR
+   ================================ */
+
+.mobile-sidebar-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .app {
+        width: 100%;
+        position: relative;
+    }
+
+    /* Sidebar floating */
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1000;
+        width: 250px;
+        max-width: 80vw;
+
+        transform: translateX(0);
+        transition: transform 0.25s ease;
+
+        box-shadow: 8px 0 25px rgba(0, 0, 0, 0.45);
+    }
+
+    /* Sidebar hidden */
+    .app.sidebar-hidden .sidebar {
+        transform: translateX(-105%);
+    }
+
+    /* Main always full screen */
+    .main {
+        width: 100%;
+        min-width: 0;
+        transition: width 0.25s ease;
+    }
+
+    /* Mobile My AI button */
+    .mobile-sidebar-toggle {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        background: #151515;
+        color: white;
+        border: none;
+        border-radius: 8px;
+
+        padding: 7px 10px;
+        font-size: 13px;
+        font-weight: 600;
+
+        cursor: pointer;
+    }
+
+    /* Logo itself works as toggle */
+    .sidebar .logo {
+        cursor: pointer;
+    }
+
+    /* Dark overlay */
+    .app:not(.sidebar-hidden)::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 900;
+        pointer-events: none;
+    }
+
+    /* Keep sidebar above overlay */
+    .sidebar {
+        z-index: 1001;
+    }
+
+    /* Keep main/header above overlay */
+    .main {
+        position: relative;
+        z-index: 1;
+    }
+
+    header {
+        position: relative;
+        z-index: 1100;
+    }
+
+}
+
+
+/* Small phones */
+@media (max-width: 480px) {
+
+    .sidebar {
+        width: 230px;
+    }
+
+    .mobile-sidebar-toggle {
+        font-size: 12px;
+        padding: 6px 9px;
+    }
+
+}

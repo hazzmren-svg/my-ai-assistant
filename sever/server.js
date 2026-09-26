@@ -4,6 +4,7 @@ require("dotenv").config();
 
 const express = require("express");
 const cookieParser = require("cookie-parser");
+const cors = require("cors");
 const path = require("path");
 const fs = require("fs");
 const mammoth = require("mammoth");
@@ -187,6 +188,17 @@ const chatRoute = require("./routes/chat");
 const { requireAuth } = require("./middleware/auth");
 const authRoute = require("./routes/auth");
 const app = express();
+
+app.use(cors({
+    origin: [
+        "https://my-ai-assistant-humk.onrender.com",
+        "https://localhost",
+        "http://localhost",
+        "capacitor://localhost"
+    ],
+    credentials: true
+}));
+
 app.use(cookieParser());
 // ==========================
 // Serve Generated Images

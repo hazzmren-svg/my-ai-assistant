@@ -41,13 +41,12 @@ loginForm.addEventListener(
 
         try {
 
-            const response =
-                await fetch(
-                    "/api/auth/login",
-                    {
+           const API_BASE = "https://my-ai-assistant-humk.onrender.com";
+
+const response = await fetch(`${API_BASE}/api/auth/login`, {
 
                         method: "POST",
-
+                        credentials: "include",
                         headers: {
                             "Content-Type":
                                 "application/json"

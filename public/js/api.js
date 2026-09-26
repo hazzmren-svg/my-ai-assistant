@@ -2,11 +2,13 @@
 // API Configuration
 // =========================
 
+const API_BASE = "https://my-ai-assistant-humk.onrender.com";
+
 const API = {
 
-    chat: "/chat",
-    upload: "/upload",
-    vision: "/chat/vision"
+    chat: `${API_BASE}/chat`,
+    upload: `${API_BASE}/upload`,
+    vision: `${API_BASE}/chat/vision`
 
 };
 
@@ -446,7 +448,7 @@ async function askDocumentAI(
 
     const response =
         await fetch(
-            "/chat/document",
+            `${API_BASE}/chat/document`,
             {
 
                 method: "POST",
@@ -492,7 +494,7 @@ async function askDocumentAI(
 }
 async function generateImage(prompt) {
     try {
-        const response = await fetch("/chat/image", {
+        const response = await fetch(`${API_BASE}/chat/image`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -543,7 +545,7 @@ async function rewriteImagePrompt(prompt) {
     try {
 
         const response = await fetch(
-            "/chat/rewrite-prompt",
+            `${API_BASE}/chat/rewrite-prompt`,
             {
                 method: "POST",
 
